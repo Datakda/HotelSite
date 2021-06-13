@@ -1,0 +1,22 @@
+﻿@model HotelSite.ViewModels.OrderViewModel
+<h2>Заказать номер</h2>
+<form method="post" asp-controller="Order" asp-action="Index">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="StartDate"></label><br />
+        <input type="datetime-local" asp-for="StartDate" />
+        <span asp-validation-for="StartDate"></span>
+    </div>
+    <div>
+        <label asp-for="EndDate"></label><br />
+        <input type="datetime-local" asp-for="EndDate" />
+        <span asp-validation-for="EndDate"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Забронировать" />
+    </div>
+</form>
+
+
+<h1>@ViewBag.Message</h1>
